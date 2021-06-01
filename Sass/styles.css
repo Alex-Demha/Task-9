@@ -16,10 +16,28 @@ nav {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 60px;
+  height: 64px;
   background: #eee;
   -webkit-box-shadow: 0px 1px 4px #66666696;
           box-shadow: 0px 1px 4px #66666696;
+}
+
+nav .cart {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ddd;
+  border-radius: 1000px;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  color: #222;
+  text-align: center;
+  padding-top: .8rem;
+  padding-right: .2rem;
+  position: fixed;
+  right: 17rem;
+  top: 1rem;
 }
 
 nav .nav-logo {
@@ -53,8 +71,8 @@ nav .nav-button .topLine, nav .nav-button .middleLine, nav .nav-button .bottomLi
   width: 40px;
   height: 5px;
   border-radius: 50px;
-  -webkit-transition: all cubic-bezier(0.2, 0.2, 0.3, 1.5) 0.4s 0.05s;
-  transition: all cubic-bezier(0.2, 0.2, 0.3, 1.5) 0.4s 0.05s;
+  -webkit-transition: all cubic-bezier(0.2, 0.2, 0.3, 1.3) 0.4s 0.05s;
+  transition: all cubic-bezier(0.2, 0.2, 0.3, 1.3) 0.4s 0.05s;
 }
 
 nav .nav-button .topLine {
@@ -71,7 +89,7 @@ nav .nav-list {
   -webkit-transform-origin: top;
           transform-origin: top;
   z-index: -2;
-  background: #005a8d;
+  background: #eee;
   width: 100%;
   height: 100vh;
   list-style: none;
@@ -83,16 +101,19 @@ nav .nav-list {
 }
 
 nav .nav-list li {
+  opacity: 0;
   display: block;
   margin: 0 40%;
   position: relative;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
 nav .nav-list li a {
   padding: 20px 12%;
   display: block;
   font-size: 2rem;
-  color: #eee;
+  color: #222;
   text-decoration: none;
 }
 
@@ -103,8 +124,13 @@ nav .nav-list li a {
   .reveal .nav-list {
     -webkit-transform: scaleY(1);
             transform: scaleY(1);
-    -webkit-box-shadow: 0px 2px 8px #005a8d;
-            box-shadow: 0px 2px 8px #005a8d;
+    -webkit-box-shadow: 0px 2px 8px #eee;
+            box-shadow: 0px 2px 8px #eee;
+  }
+  .reveal .nav-list li {
+    opacity: 1;
+    -webkit-transition: opacity .4s ease-out .2s;
+    transition: opacity .4s ease-out .2s;
   }
   .reveal .close .topLine {
     -webkit-transform: rotate(45deg);
@@ -130,6 +156,10 @@ nav .nav-list li a {
     height: 80px;
     z-index: 100;
   }
+  nav .cart {
+    top: 2rem;
+    right: 2rem;
+  }
   nav .nav-logo {
     top: 20px;
     left: 20px;
@@ -138,8 +168,9 @@ nav .nav-list li a {
     display: none;
   }
   nav .nav-list {
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    margin-left: 40%;
     background: transparent;
     height: 100%;
     display: -webkit-box;
@@ -152,6 +183,7 @@ nav .nav-list li a {
     padding-top: 5px;
   }
   nav .nav-list li {
+    opacity: 1;
     margin: 8px;
     height: 40px;
   }
@@ -283,7 +315,7 @@ nav .nav-list li a {
 .footer {
   position: relative;
   top: 30px;
-  background-color: #333;
+  background-color: #091e27;
   color: white;
 }
 
